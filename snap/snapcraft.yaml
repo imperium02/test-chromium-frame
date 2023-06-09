@@ -1,5 +1,5 @@
-name: electron-kiosk-wayland
-version: '0.1'
+name: test-chromium-frame
+version: "0.1"
 summary: Electron based kiosk browser
 description: |
   A simple Electron Kiosk app that acts as a fullscreen browser
@@ -12,14 +12,14 @@ description: |
 
   To quieten log spam please connect the interfaces below
 
-      snap connect electron-kiosk-wayland:hardware-observe
-      snap connect electron-kiosk-wayland:network-observe
-      snap connect electron-kiosk-wayland:process-control
+      snap connect test-chromium-frame:hardware-observe
+      snap connect test-chromium-frame:network-observe
+      snap connect test-chromium-frame:process-control
 
   The app comes with a configuarble url option that allows you to
   pick which page is shown. To use this feature simply call
 
-      snap set electron-kiosk-wayland url=https://www.ubuntu.com
+      snap set test-chromium-frame url=https://www.ubuntu.com
 
 base: core20
 confinement: strict
@@ -32,10 +32,10 @@ architectures:
   - build-on: arm64
 
 apps:
-  electron-kiosk-wayland:
+  test-chromium-frame:
     daemon: simple
     restart-condition: always
-    extensions: [ gnome-3-38 ]
+    extensions: [gnome-3-38]
     environment:
       GTK_USE_PORTAL: 0
     command: usr/bin/wrapper
