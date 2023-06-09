@@ -23,7 +23,7 @@ description: |
 
 base: core20
 confinement: strict
-grade: devel
+grade: stable
 compression: lzo
 
 architectures:
